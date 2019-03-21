@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+const express = require('express')
+const app = express()
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h2>hello,yyh123</h2>
-      </div>
-    );
-  }
-}
+app.get('/', (req,res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>hello,react</title>
+      </head>
+      <body>
+        <h1>first lesson</h1>
+        <p>hello world</p>
+      </body>
+    </html>
+  `)
+})
 
-export default App;
+app.listen(3000,()=>{
+  global.console.log('server is running on port of 3000')
+})
+
